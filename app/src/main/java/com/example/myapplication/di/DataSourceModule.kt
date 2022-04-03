@@ -1,5 +1,7 @@
 package com.example.myapplication.di
 
+import com.example.data.datasource.garden.SignInDataSource
+import com.example.data.datasource.garden.SignInDataSourceImpl
 import com.example.data.datasource.sign.SignDataSource
 import com.example.data.datasource.sign.SignDataSourceImpl
 import com.example.data.datasource.test.TestDataSource
@@ -10,4 +12,5 @@ import org.koin.dsl.module
 val dataSourceModule = module {
     single<SignDataSource>{ SignDataSourceImpl(get()) }
     single<TestDataSource>{ TestDataSourceImpl(get())}
+    single<SignInDataSource> { SignInDataSourceImpl(get()) }
 }

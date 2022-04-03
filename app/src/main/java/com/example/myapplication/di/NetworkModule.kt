@@ -1,5 +1,6 @@
 package com.example.myapplication.di
 
+import com.example.data.api.GardenService
 import com.example.data.api.SignService
 import com.example.data.api.TestService
 import org.koin.dsl.module
@@ -13,6 +14,10 @@ val networkModule = module {
 
     single<TestService>{
         get<Retrofit>().create(TestService::class.java)
+    }
+
+    single<GardenService> {
+        get<Retrofit>().create(GardenService::class.java)
     }
 
 }
